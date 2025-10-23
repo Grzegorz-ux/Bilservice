@@ -1,0 +1,47 @@
+/* basic reset */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: Arial, sans-serif; line-height:1.6; color:#fff; }
+
+/* HEADER */
+header { display:flex; justify-content:space-between; align-items:center; padding:15px 20px; background-color:#1e1e1e; position:relative; }
+.logo { font-size:1.5rem; font-weight:bold; }
+.nav-menu ul { display:flex; list-style:none; }
+.nav-menu ul li { margin-left:20px; }
+.nav-menu ul li a { color:white; text-decoration:none; transition:color 0.3s; }
+.nav-menu ul li a:hover { color:#f39c12; }
+.hamburger { display:none; font-size:1.5rem; background:none; border:none; color:white; cursor:pointer; }
+
+/* section */
+main section { position:relative; padding:80px 20px; min-height:400px; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; background-size:cover; background-position:center; }
+main section::before { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:0; }
+main section * { position:relative; z-index:1; }
+
+/* section backgrounds */
+#home { background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1632&q=80'); }
+#services { background-image:url('https://images.unsplash.com/photo-1643236084696-13306d729ff3?auto=format&fit=crop&w=1031&q=80'); }
+#about { background-image:url('https://images.unsplash.com/photo-1732624696535-68022a5b84dc?auto=format&fit=crop&w=1470&q=80'); }
+#contact { background-image:url('https://images.unsplash.com/photo-1605208018752-640a6565e886?auto=format&fit=crop&w=1470&q=80'); }
+
+/* Overlay at the menu */
+.menu-overlay { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:5; }
+.menu-overlay.active { display:block; }
+
+/* RESPONSIVENESS - mobile menu */
+@media (max-width:768px) {
+  .hamburger { display:block; }
+  .nav-menu { display:none; position:absolute; top:60px; left:0; width:100%; background-color:rgba(30,30,30,0.95); flex-direction:column; z-index:10; }
+  .nav-menu.active { display:flex; }
+  .nav-menu ul { flex-direction:column; }
+  .nav-menu ul li { margin:15px 0; text-align:center; }
+}
+footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+
+
